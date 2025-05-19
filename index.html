@@ -1,42 +1,211 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Génère ta sexy influenceuse</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Génère ta sexy influenceuse</h1>
-        <div id="ethnicity-step" class="step">
-            <h2>Choisis une origine</h2>
-            <div class="ethnicity-options">
-                <button data-ethnicity="EUUS">EUUS 🇺🇸</button>
-                <button data-ethnicity="Pays de l'Est">Pays de l'Est 🇷🇺</button>
-                <button data-ethnicity="Arabe">Arabe 🇪🇬</button>
-                <button data-ethnicity="Moyen-Orient">Moyen-Orient 🇮🇷</button>
-                <button data-ethnicity="Asiatique">Asiatique 🇯🇵</button>
-                <button data-ethnicity="Africaine">Africaine 🇨🇮</button>
-                <button data-ethnicity="Latine">Latine 🇲🇽</button>
-                <button data-ethnicity="Métisse">Métisse 🌍</button>
-            </div>
-            <div class="name-section">
-                <label for="firstName">Prénom :</label>
-                <input type="text" id="firstName" placeholder="Entrez un prénom">
-                <button id="randomFirstName">Aléatoire</button>
-
-                <label for="lastName">Nom :</label>
-                <input type="text" id="lastName" placeholder="Entrez un nom">
-                <button id="randomLastName">Aléatoire</button>
-            </div>
-            <div class="username-section">
-                <p>@<span id="generatedUsername"></span></p>
-            </div>
-            <button id="nextButton">Suivant</button>
-        </div>
+<div class="creation-flow">
+  <!-- Étape 1: Origine Ethnique -->
+  <div class="creation-step active" id="origin-step">
+    <h2><img src="images/icon-origin.png" alt=""> Origine Ethnique</h2>
+    <div class="options-grid">
+      <div class="option-card" data-value="european">
+        <img src="images/origins/european.jpg" alt="Européenne">
+        <span>Européenne</span>
+      </div>
+      <div class="option-card" data-value="eastern">
+        <img src="images/origins/eastern.jpg" alt="Pays de l'Est">
+        <span>Pays de l'Est</span>
+      </div>
+      <!-- Autres options comme sur Capture du 2025-05-18 14-50-57.png -->
     </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">Retour</button>
+      <button class="nav-btn next-btn">Suivant</button>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+  <!-- Étape 2: Âge Perçu -->
+  <div class="creation-step" id="age-step">
+    <h2><img src="images/icon-age.png" alt=""> Âge Perçu</h2>
+    <div class="options-row">
+      <div class="age-option" data-value="18-22">
+        <img src="images/age/18-22.jpg" alt="18-22 ans">
+        <span>18-22</span>
+      </div>
+      <div class="age-option" data-value="23-27">
+        <img src="images/age/23-27.jpg" alt="23-27 ans">
+        <span>23-27</span>
+      </div>
+      <div class="age-option" data-value="28-35">
+        <img src="images/age/28-35.jpg" alt="28-35 ans">
+        <span>28-35</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">← Retour</button>
+      <button class="nav-btn next-btn">Suivant →</button>
+    </div>
+  </div>
+
+  <!-- Étape 3: Forme du Visage -->
+  <div class="creation-step" id="face-step">
+    <h2><img src="images/icon-face.png" alt=""> Forme du Visage</h2>
+    <div class="options-grid">
+      <div class="option-card" data-value="oval">
+        <img src="images/faces/oval.jpg" alt="Ovale">
+        <span>Ovale</span>
+      </div>
+      <div class="option-card" data-value="square">
+        <img src="images/faces/square.jpg" alt="Carrée">
+        <span>Carrée</span>
+      </div>
+      <div class="option-card" data-value="round">
+        <img src="images/faces/round.jpg" alt="Ronde">
+        <span>Ronde</span>
+      </div>
+      <div class="option-card" data-value="diamond">
+        <img src="images/faces/diamond.jpg" alt="En diamant">
+        <span>En diamant</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">Retour</button>
+      <button class="nav-btn next-btn">Suivant</button>
+    </div>
+  </div>
+
+  <!-- Étape 4: Morphologie -->
+  <div class="creation-step" id="body-step">
+    <h2><img src="images/icon-body.png" alt=""> Morphologie</h2>
+    <div class="options-grid">
+      <div class="option-card" data-value="slim">
+        <img src="images/bodies/slim.jpg" alt="Minçe">
+        <span>Minçe</span>
+      </div>
+      <div class="option-card" data-value="petite">
+        <img src="images/bodies/petite.jpg" alt="Petite et fine">
+        <span>Petite et fine</span>
+      </div>
+      <div class="option-card" data-value="normal">
+        <img src="images/bodies/normal.jpg" alt="Normale">
+        <span>Normale</span>
+      </div>
+      <div class="option-card" data-value="curvy">
+        <img src="images/bodies/curvy.jpg" alt="Voluptueuse">
+        <span>Voluptueuse</span>
+      </div>
+      <div class="option-card" data-value="athletic">
+        <img src="images/bodies/athletic.jpg" alt="Athlétique">
+        <span>Athlétique</span>
+      </div>
+      <div class="option-card" data-value="muscular">
+        <img src="images/bodies/muscular.jpg" alt="Musclée">
+        <span>Musclée</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">Retour</button>
+      <button class="nav-btn next-btn">Suivant</button>
+    </div>
+  </div>
+
+  <!-- Étape 5: Poitrine -->
+  <div class="creation-step" id="chest-step">
+    <h2><img src="images/icon-chest.png" alt=""> Poitrine</h2>
+    <div class="options-grid">
+      <div class="option-card" data-value="small">
+        <img src="images/chest/small.jpg" alt="Petite">
+        <span>Petite</span>
+      </div>
+      <div class="option-card" data-value="medium">
+        <img src="images/chest/medium.jpg" alt="Moyenne">
+        <span>Moyenne</span>
+      </div>
+      <div class="option-card" data-value="large">
+        <img src="images/chest/large.jpg" alt="Généreuse">
+        <span>Généreuse</span>
+      </div>
+      <div class="option-card" data-value="very-large">
+        <img src="images/chest/very-large.jpg" alt="Très généreuse">
+        <span>Très généreuse</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">Retour</button>
+      <button class="nav-btn next-btn">Suivant</button>
+    </div>
+  </div>
+
+  <!-- Étape 6: Sourcils -->
+  <div class="creation-step" id="eyebrows-step">
+    <h2><img src="images/icon-eyebrows.png" alt=""> Forme des Sourcils</h2>
+    <div class="options-grid">
+      <div class="option-card" data-value="straight">
+        <img src="images/eyebrows/straight.jpg" alt="Droits">
+        <span>Droits</span>
+      </div>
+      <div class="option-card" data-value="soft-arch">
+        <img src="images/eyebrows/soft-arch.jpg" alt="Légèrement arqués">
+        <span>Légèrement arqués</span>
+      </div>
+      <div class="option-card" data-value="high-arch">
+        <img src="images/eyebrows/high-arch.jpg" alt="Très arqués">
+        <span>Très arqués</span>
+      </div>
+      <div class="option-card" data-value="rounded">
+        <img src="images/eyebrows/rounded.jpg" alt="Arrondis">
+        <span>Arrondis</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">Retour</button>
+      <button class="nav-btn next-btn">Suivant</button>
+    </div>
+  </div>
+
+  <!-- Étape 7: Longueur des Cheveux -->
+  <div class="creation-step" id="hair-length-step">
+    <h2><img src="images/icon-hair.png" alt=""> Longueur des Cheveux</h2>
+    <div class="options-row">
+      <div class="option-card" data-value="short">
+        <img src="images/hair/short.jpg" alt="Courts">
+        <span>Courts</span>
+      </div>
+      <div class="option-card" data-value="medium">
+        <img src="images/hair/medium.jpg" alt="Mi-longs">
+        <span>Mi-longs</span>
+      </div>
+      <div class="option-card" data-value="long">
+        <img src="images/hair/long.jpg" alt="Longs">
+        <span>Longs</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="nav-btn back-btn">Retour</button>
+      <button class="nav-btn next-btn">Suivant</button>
+    </div>
+  </div>
+
+  <!-- Étape 8: Récapitulatif -->
+  <div class="creation-step" id="summary-step">
+    <h2><img src="images/icon-summary.png" alt=""> Récapitulatif</h2>
+    <div class="summary-card">
+      <div class="summary-preview" id="final-preview">
+        <!-- Aperçu 3D final -->
+      </div>
+      <div class="summary-details">
+        <div class="detail-item">
+          <span class="detail-label">Origine:</span>
+          <span class="detail-value" id="origin-value">Latine</span>
+        </div>
+        <!-- Tous les autres détails -->
+      </div>
+    </div>
+    <div class="prompt-box">
+      <h3>Prompt ID Généré:</h3>
+      <textarea id="ai-prompt" readonly>
+Une femme latino de 25 ans, visage ovale, yeux en amande, sourcils légèrement arqués, nez fin, lèvres pulpeuses, cheveux longs et bouclés, morphologie voluptueuse, poitrine généreuse.
+      </textarea>
+      <div class="prompt-actions">
+        <button class="action-btn copy-btn">Copier</button>
+        <button class="action-btn restart-btn">Recommencer</button>
+        <button class="action-btn back-btn">Retour</button>
+      </div>
+    </div>
+  </div>
+</div>
