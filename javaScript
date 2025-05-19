@@ -1,0 +1,62 @@
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const ethnicityButtons = document.querySelectorAll('.ethnicity-options button');
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const randomFirstNameButton = document.getElementById('randomFirstName');
+    const randomLastNameButton = document.getElementById('randomLastName');
+    const generatedUsernameSpan = document.getElementById('generatedUsername');
+    const nextButton = document.getElementById('nextButton');
+
+    // Générateur de noms aléatoires
+    function generateRandomName() {
+        const firstNames = ['Ariana', 'Selena', 'Kim', 'Taylor', 'Beyoncé', 'Rihanna', 'Kylie'];
+        const lastNames = ['Gomez', 'Jenner', 'Hudson', 'Spears', 'Knowles', 'Lopez', 'Jenner'];
+
+        return {
+            firstName: firstNames[Math.floor(Math.random() * firstNames.length)],
+            lastName: lastNames[Math.floor(Math.random() * lastNames.length)]
+        };
+    }
+
+    // Événement pour les boutons d'éthnie
+    ethnicityButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            ethnicityButtons.forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+        });
+    });
+
+    // Événement pour les boutons "Aléatoire"
+    randomFirstNameButton.addEventListener('click', () => {
+        const { firstName } = generateRandomName();
+        firstNameInput.value = firstName;
+    });
+
+    randomLastNameButton.addEventListener('click', () => {
+        const { lastName } = generateRandomName();
+        lastNameInput.value = lastName;
+    });
+
+    // Mise à jour du pseudo Instagram
+    firstNameInput.addEventListener('input', updateUsername);
+    lastNameInput.addEventListener('input', updateUsername);
+
+    function updateUsername() {
+        const username = `${firstNameInput.value.toLowerCase()}${lastNameInput.value.toLowerCase()}`;
+        generatedUsernameSpan.textContent = username;
+    }
+
+    // Bouton "Suivant"
+    nextButton.addEventListener('click', () => {
+        const selectedEthnicity = Array.from(ethnicityButtons).find(button => button.classList.contains('selected'));
+        if (selectedEthnicity) {
+            console.log(`Éthnie sélectionnée : ${selectedEthnicity.dataset.ethnicity}`);
+            console.log(`Prénom : ${firstNameInput.value}`);
+            console.log(`Nom : ${lastNameInput.value}`);
+            // Ici, vous pouvez ajouter la logique pour passer à l'étape suivante
+        } else {
+            alert('Veuillez choisir une éthnie.');
+        }
+    });
+});
