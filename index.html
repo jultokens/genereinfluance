@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,26 +9,32 @@
 <body>
     <div class="container">
         <h1>Génère ta sexy influenceuse</h1>
-        <h2>Choisis l'éthnie de ton influenceuse</h2>
-        <div class="ethnicity-options">
-            <div class="option">
-                <img src="images/african.jpg" alt="Africaine">
-                <label>Africaine</label>
+        <div id="ethnicity-step" class="step">
+            <h2>Choisis une origine</h2>
+            <div class="ethnicity-options">
+                <button data-ethnicity="EUUS">EUUS 🇺🇸</button>
+                <button data-ethnicity="Pays de l'Est">Pays de l'Est 🇷🇺</button>
+                <button data-ethnicity="Arabe">Arabe 🇪🇬</button>
+                <button data-ethnicity="Moyen-Orient">Moyen-Orient 🇮🇷</button>
+                <button data-ethnicity="Asiatique">Asiatique 🇯🇵</button>
+                <button data-ethnicity="Africaine">Africaine 🇨🇮</button>
+                <button data-ethnicity="Latine">Latine 🇲🇽</button>
+                <button data-ethnicity="Métisse">Métisse 🌍</button>
             </div>
-            <div class="option">
-                <img src="images/european.jpg" alt="Européenne">
-                <label>Européenne</label>
+            <div class="name-section">
+                <label for="firstName">Prénom :</label>
+                <input type="text" id="firstName" placeholder="Entrez un prénom">
+                <button id="randomFirstName">Aléatoire</button>
+
+                <label for="lastName">Nom :</label>
+                <input type="text" id="lastName" placeholder="Entrez un nom">
+                <button id="randomLastName">Aléatoire</button>
             </div>
-            <div class="option">
-                <img src="images/latino.jpg" alt="Latino">
-                <label>Latino</label>
+            <div class="username-section">
+                <p>@<span id="generatedUsername"></span></p>
             </div>
-            <div class="option">
-                <img src="images/asian.jpg" alt="Asiatique">
-                <label>Asiatique</label>
-            </div>
+            <button id="nextButton">Suivant</button>
         </div>
-        <button id="nextButton">Suivant</button>
     </div>
 
     <script src="script.js"></script>
