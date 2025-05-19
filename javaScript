@@ -1,62 +1,106 @@
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const ethnicityButtons = document.querySelectorAll('.ethnicity-options button');
-    const firstNameInput = document.getElementById('firstName');
-    const lastNameInput = document.getElementById('lastName');
-    const randomFirstNameButton = document.getElementById('randomFirstName');
-    const randomLastNameButton = document.getElementById('randomLastName');
-    const generatedUsernameSpan = document.getElementById('generatedUsername');
-    const nextButton = document.getElementById('nextButton');
-
-    // Générateur de noms aléatoires
-    function generateRandomName() {
-        const firstNames = ['Ariana', 'Selena', 'Kim', 'Taylor', 'Beyoncé', 'Rihanna', 'Kylie'];
-        const lastNames = ['Gomez', 'Jenner', 'Hudson', 'Spears', 'Knowles', 'Lopez', 'Jenner'];
-
-        return {
-            firstName: firstNames[Math.floor(Math.random() * firstNames.length)],
-            lastName: lastNames[Math.floor(Math.random() * lastNames.length)]
-        };
+document.addEventListener('DOMContentLoaded', function() {
+  const steps = Array.from(document.querySelectorAll('.creation-step'));
+  let currentStep = 0;
+  
+  // Initialize
+  steps[currentStep].classList.add('active');
+  
+  // Next button
+  document.querySelectorAll('.next-btn').forEach(btn => {
+    btn.addEventListener('click', goToNextStep);
+  });
+  
+  // Back button
+  document.querySelectorAll('.back-btn').forEach(btn => {
+    btn.addEventListener('click', goToPrevStep);
+  });
+  
+  // Option selection
+  document.querySelectorAll('.option-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const parentStep = this.closest('.creation-step');
+      parentStep.querySelectorAll('.option-card').forEach(c => {
+        c.classList.remove('active');
+      });
+      this.classList.add('active');
+      updateSummary();
+    });
+  });
+  
+  // Copy prompt
+  document.querySelector('.copy-btn').addEventListener('click', function() {
+    const prompt = document.getElementById('ai-prompt');
+    prompt.select();
+    document.execCommand('copy');
+    alert('Prompt copié dans le presse-papiers!');
+  });
+  
+  // Restart
+  document.querySelector('.restart-btn').addEventListener('click', function() {
+    if (confirm('Recommencer une nouvelle création?')) {
+      resetForm();
     }
-
-    // Événement pour les boutons d'éthnie
-    ethnicityButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            ethnicityButtons.forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
-        });
-    });
-
-    // Événement pour les boutons "Aléatoire"
-    randomFirstNameButton.addEventListener('click', () => {
-        const { firstName } = generateRandomName();
-        firstNameInput.value = firstName;
-    });
-
-    randomLastNameButton.addEventListener('click', () => {
-        const { lastName } = generateRandomName();
-        lastNameInput.value = lastName;
-    });
-
-    // Mise à jour du pseudo Instagram
-    firstNameInput.addEventListener('input', updateUsername);
-    lastNameInput.addEventListener('input', updateUsername);
-
-    function updateUsername() {
-        const username = `${firstNameInput.value.toLowerCase()}${lastNameInput.value.toLowerCase()}`;
-        generatedUsernameSpan.textContent = username;
+  });
+  
+  function goToNextStep() {
+    if (currentStep < steps.length - 1) {
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      steps[currentStep].classList.add('active');
+      updateSummary();
     }
-
-    // Bouton "Suivant"
-    nextButton.addEventListener('click', () => {
-        const selectedEthnicity = Array.from(ethnicityButtons).find(button => button.classList.contains('selected'));
-        if (selectedEthnicity) {
-            console.log(`Éthnie sélectionnée : ${selectedEthnicity.dataset.ethnicity}`);
-            console.log(`Prénom : ${firstNameInput.value}`);
-            console.log(`Nom : ${lastNameInput.value}`);
-            // Ici, vous pouvez ajouter la logique pour passer à l'étape suivante
-        } else {
-            alert('Veuillez choisir une éthnie.');
-        }
+  }
+  
+  function goToPrevStep() {
+    if (currentStep > 0) {
+      steps[currentStep].classList.remove('active');
+      currentStep--;
+      steps[currentStep].classList.add('active');
+    }
+  }
+  
+  function updateSummary() {
+    // Update all summary values based on selections
+    const origin = document.querySelector('#origin-step .option-card.active');
+    if (origin) {
+      document.getElementById('origin-value').textContent = origin.querySelector('span').textContent;
+    }
+    
+    // Update all other values similarly...
+    
+    // Generate AI prompt
+    generateAIPrompt();
+  }
+  
+  function generateAIPrompt() {
+    // Get all selected values
+    const origin = document.querySelector('#origin-step .option-card.active span')?.textContent || 'non spécifié';
+    const age = document.querySelector('#age-step .option-card.active span')?.textContent || 'non spécifié';
+    const face = document.querySelector('#face-step .option-card.active span')?.textContent || 'non spécifié';
+    const body = document.querySelector('#body-step .option-card.active span')?.textContent || 'non spécifié';
+    const chest = document.querySelector('#chest-step .option-card.active span')?.textContent || 'non spécifié';
+    const hair = document.querySelector('#hair-length-step .option-card.active span')?.textContent || 'non spécifié';
+    
+    // Construct prompt
+    const prompt = `Une femme ${origin.toLowerCase()} de ${age} ans, visage ${face.toLowerCase()}, ` +
+                  `morphologie ${body.toLowerCase()}, poitrine ${chest.toLowerCase()}, ` +
+                  `cheveux ${hair.toLowerCase()}.`;
+    
+    document.getElementById('ai-prompt').value = prompt;
+  }
+  
+  function resetForm() {
+    // Reset all selections
+    document.querySelectorAll('.option-card').forEach(card => {
+      card.classList.remove('active');
     });
+    
+    // Go back to first step
+    steps[currentStep].classList.remove('active');
+    currentStep = 0;
+    steps[currentStep].classList.add('active');
+    
+    // Reset summary
+    updateSummary();
+  }
 });
