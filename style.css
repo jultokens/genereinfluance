@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.ethnicity-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.option {
+    text-align: center;
+    cursor: pointer;
+}
+
+.option img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+#nextButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
