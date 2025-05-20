@@ -1,211 +1,527 @@
-<div class="creation-flow">
-  <!-- Étape 1: Origine Ethnique -->
-  <div class="creation-step active" id="origin-step">
-    <h2><img src="images/icon-origin.png" alt=""> Origine Ethnique</h2>
-    <div class="options-grid">
-      <div class="option-card" data-value="european">
-        <img src="images/origins/european.jpg" alt="Européenne">
-        <span>Européenne</span>
-      </div>
-      <div class="option-card" data-value="eastern">
-        <img src="images/origins/eastern.jpg" alt="Pays de l'Est">
-        <span>Pays de l'Est</span>
-      </div>
-      <!-- Autres options comme sur Capture du 2025-05-18 14-50-57.png -->
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">Retour</button>
-      <button class="nav-btn next-btn">Suivant</button>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Prompt Influenceuse Ultra Réaliste</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --container-bg: white;
+            --container-shadow: rgba(0,0,0,0.1);
+            --border-color: #ddd;
+            --checkbox-bg: #f0f0f0;
+            --primary-color: #ff2d75;
+            --primary-hover: #e61a66;
+            --secondary-color: #4CAF50;
+            --secondary-hover: #3e8e41;
+            --result-border: #ff2d75;
+        }
 
-  <!-- Étape 2: Âge Perçu -->
-  <div class="creation-step" id="age-step">
-    <h2><img src="images/icon-age.png" alt=""> Âge Perçu</h2>
-    <div class="options-row">
-      <div class="age-option" data-value="18-22">
-        <img src="images/age/18-22.jpg" alt="18-22 ans">
-        <span>18-22</span>
-      </div>
-      <div class="age-option" data-value="23-27">
-        <img src="images/age/23-27.jpg" alt="23-27 ans">
-        <span>23-27</span>
-      </div>
-      <div class="age-option" data-value="28-35">
-        <img src="images/age/28-35.jpg" alt="28-35 ans">
-        <span>28-35</span>
-      </div>
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">← Retour</button>
-      <button class="nav-btn next-btn">Suivant →</button>
-    </div>
-  </div>
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --container-bg: #1e1e1e;
+            --container-shadow: rgba(0,0,0,0.3);
+            --border-color: #444;
+            --checkbox-bg: #2d2d2d;
+            --primary-color: #ff4081;
+            --primary-hover: #f50057;
+            --secondary-color: #388e3c;
+            --secondary-hover: #2e7d32;
+            --result-border: #ff4081;
+        }
 
-  <!-- Étape 3: Forme du Visage -->
-  <div class="creation-step" id="face-step">
-    <h2><img src="images/icon-face.png" alt=""> Forme du Visage</h2>
-    <div class="options-grid">
-      <div class="option-card" data-value="oval">
-        <img src="images/faces/oval.jpg" alt="Ovale">
-        <span>Ovale</span>
-      </div>
-      <div class="option-card" data-value="square">
-        <img src="images/faces/square.jpg" alt="Carrée">
-        <span>Carrée</span>
-      </div>
-      <div class="option-card" data-value="round">
-        <img src="images/faces/round.jpg" alt="Ronde">
-        <span>Ronde</span>
-      </div>
-      <div class="option-card" data-value="diamond">
-        <img src="images/faces/diamond.jpg" alt="En diamant">
-        <span>En diamant</span>
-      </div>
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">Retour</button>
-      <button class="nav-btn next-btn">Suivant</button>
-    </div>
-  </div>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-  <!-- Étape 4: Morphologie -->
-  <div class="creation-step" id="body-step">
-    <h2><img src="images/icon-body.png" alt=""> Morphologie</h2>
-    <div class="options-grid">
-      <div class="option-card" data-value="slim">
-        <img src="images/bodies/slim.jpg" alt="Minçe">
-        <span>Minçe</span>
-      </div>
-      <div class="option-card" data-value="petite">
-        <img src="images/bodies/petite.jpg" alt="Petite et fine">
-        <span>Petite et fine</span>
-      </div>
-      <div class="option-card" data-value="normal">
-        <img src="images/bodies/normal.jpg" alt="Normale">
-        <span>Normale</span>
-      </div>
-      <div class="option-card" data-value="curvy">
-        <img src="images/bodies/curvy.jpg" alt="Voluptueuse">
-        <span>Voluptueuse</span>
-      </div>
-      <div class="option-card" data-value="athletic">
-        <img src="images/bodies/athletic.jpg" alt="Athlétique">
-        <span>Athlétique</span>
-      </div>
-      <div class="option-card" data-value="muscular">
-        <img src="images/bodies/muscular.jpg" alt="Musclée">
-        <span>Musclée</span>
-      </div>
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">Retour</button>
-      <button class="nav-btn next-btn">Suivant</button>
-    </div>
-  </div>
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-  <!-- Étape 5: Poitrine -->
-  <div class="creation-step" id="chest-step">
-    <h2><img src="images/icon-chest.png" alt=""> Poitrine</h2>
-    <div class="options-grid">
-      <div class="option-card" data-value="small">
-        <img src="images/chest/small.jpg" alt="Petite">
-        <span>Petite</span>
-      </div>
-      <div class="option-card" data-value="medium">
-        <img src="images/chest/medium.jpg" alt="Moyenne">
-        <span>Moyenne</span>
-      </div>
-      <div class="option-card" data-value="large">
-        <img src="images/chest/large.jpg" alt="Généreuse">
-        <span>Généreuse</span>
-      </div>
-      <div class="option-card" data-value="very-large">
-        <img src="images/chest/very-large.jpg" alt="Très généreuse">
-        <span>Très généreuse</span>
-      </div>
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">Retour</button>
-      <button class="nav-btn next-btn">Suivant</button>
-    </div>
-  </div>
+        .form-container {
+            background-color: var(--container-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px var(--container-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
 
-  <!-- Étape 6: Sourcils -->
-  <div class="creation-step" id="eyebrows-step">
-    <h2><img src="images/icon-eyebrows.png" alt=""> Forme des Sourcils</h2>
-    <div class="options-grid">
-      <div class="option-card" data-value="straight">
-        <img src="images/eyebrows/straight.jpg" alt="Droits">
-        <span>Droits</span>
-      </div>
-      <div class="option-card" data-value="soft-arch">
-        <img src="images/eyebrows/soft-arch.jpg" alt="Légèrement arqués">
-        <span>Légèrement arqués</span>
-      </div>
-      <div class="option-card" data-value="high-arch">
-        <img src="images/eyebrows/high-arch.jpg" alt="Très arqués">
-        <span>Très arqués</span>
-      </div>
-      <div class="option-card" data-value="rounded">
-        <img src="images/eyebrows/rounded.jpg" alt="Arrondis">
-        <span>Arrondis</span>
-      </div>
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">Retour</button>
-      <button class="nav-btn next-btn">Suivant</button>
-    </div>
-  </div>
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-  <!-- Étape 7: Longueur des Cheveux -->
-  <div class="creation-step" id="hair-length-step">
-    <h2><img src="images/icon-hair.png" alt=""> Longueur des Cheveux</h2>
-    <div class="options-row">
-      <div class="option-card" data-value="short">
-        <img src="images/hair/short.jpg" alt="Courts">
-        <span>Courts</span>
-      </div>
-      <div class="option-card" data-value="medium">
-        <img src="images/hair/medium.jpg" alt="Mi-longs">
-        <span>Mi-longs</span>
-      </div>
-      <div class="option-card" data-value="long">
-        <img src="images/hair/long.jpg" alt="Longs">
-        <span>Longs</span>
-      </div>
-    </div>
-    <div class="navigation">
-      <button class="nav-btn back-btn">Retour</button>
-      <button class="nav-btn next-btn">Suivant</button>
-    </div>
-  </div>
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
 
-  <!-- Étape 8: Récapitulatif -->
-  <div class="creation-step" id="summary-step">
-    <h2><img src="images/icon-summary.png" alt=""> Récapitulatif</h2>
-    <div class="summary-card">
-      <div class="summary-preview" id="final-preview">
-        <!-- Aperçu 3D final -->
-      </div>
-      <div class="summary-details">
-        <div class="detail-item">
-          <span class="detail-label">Origine:</span>
-          <span class="detail-value" id="origin-value">Latine</span>
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: var(--container-bg);
+            color: var(--text-color);
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: var(--checkbox-bg);
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .checkbox-item input {
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--container-bg);
+            border-radius: 5px;
+            border-left: 4px solid var(--result-border);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .copy-btn {
+            background-color: var(--secondary-color);
+            margin-top: 10px;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--secondary-hover);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleDarkMode()">🌓</button>
+    
+    <h1>Générateur de Prompt Influenceuse Ultra Réaliste</h1>
+    
+    <div class="form-container">
+        <form id="influencerForm">
+            <div class="form-group">
+                <label for="firstName">Prénom:</label>
+                <input type="text" id="firstName" placeholder="Ex: Emma, Sofia, Léa...">
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">Nom:</label>
+                <input type="text" id="lastName" placeholder="Ex: Dubois, Martin, Lopez...">
+            </div>
+            
+            <div class="form-group">
+                <label for="ethnicity">Ethnie:</label>
+                <select id="ethnicity">
+                    <option value="caucasienne">Caucasienne</option>
+                    <option value="afro-américaine">Afro-américaine</option>
+                    <option value="asiatique">Asiatique</option>
+                    <option value="latina">Latina</option>
+                    <option value="métisse">Métisse</option>
+                    <option value="méditerranéenne">Méditerranéenne</option>
+                    <option value="indienne">Indienne</option>
+                    <option value="arabe">Arabe</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="faceShape">Forme du visage:</label>
+                <select id="faceShape">
+                    <option value="ovale">Ovale</option>
+                    <option value="carré">Carré</option>
+                    <option value="rond">Rond</option>
+                    <option value="cœur">Cœur</option>
+                    <option value="allongé">Allongé</option>
+                    <option value="diamant">Diamant</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="eyes">Yeux:</label>
+                <select id="eyes">
+                    <option value="grands yeux expressifs">Grands yeux expressifs</option>
+                    <option value="yeux en amande">Yeux en amande</option>
+                    <option value="yeux profonds">Yeux profonds</option>
+                    <option value="yeux légèrement bridés">Yeux légèrement bridés</option>
+                    <option value="yeux ronds">Yeux ronds</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="eyeColor">Couleur des yeux:</label>
+                <select id="eyeColor">
+                    <option value="marron">Marron</option>
+                    <option value="bleus">Bleus</option>
+                    <option value="verts">Verts</option>
+                    <option value="gris">Gris</option>
+                    <option value="noisette">Noisette</option>
+                    <option value="ambre">Ambre</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="hairColor">Couleur de cheveux:</label>
+                <select id="hairColor">
+                    <option value="brun">Brun</option>
+                    <option value="blond">Blond</option>
+                    <option value="noir">Noir</option>
+                    <option value="roux">Roux</option>
+                    <option value="châtain">Châtain</option>
+                    <option value="blond platine">Blond platine</option>
+                    <option value="coloré">Coloré (rose, bleu, etc.)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="hairLength">Longueur des cheveux:</label>
+                <select id="hairLength">
+                    <option value="courts">Courts</option>
+                    <option value="mi-longs">Mi-longs</option>
+                    <option value="longs">Longs</option>
+                    <option value="très longs">Très longs</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="hairStyle">Style de cheveux:</label>
+                <select id="hairStyle">
+                    <option value="lisses">Lisses</option>
+                    <option value="bouclés">Bouclés</option>
+                    <option value="frisés">Frisés</option>
+                    <option value="ondulés">Ondulés</option>
+                    <option value="tresses">Tresses</option>
+                    <option value="chignon">Chignon</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="bodyType">Silhouette:</label>
+                <select id="bodyType">
+                    <option value="mince">Mince</option>
+                    <option value="normale">Normale</option>
+                    <option value="pulpeuse">Pulpeuse</option>
+                    <option value="sportive">Sportive</option>
+                    <option value="musclée">Musclée</option>
+                    <option value="voluptueuse">Voluptueuse</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="breastSize">Taille des seins:</label>
+                <select id="breastSize">
+                    <option value="petits">Petits</option>
+                    <option value="moyens">Moyens</option>
+                    <option value="généreux">Généreux</option>
+                    <option value="très généreux">Très généreux</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="buttSize">Taille des fesses:</label>
+                <select id="buttSize">
+                    <option value="petites">Petites</option>
+                    <option value="moyennes">Moyennes</option>
+                    <option value="généreuses">Généreuses</option>
+                    <option value="très généreuses">Très généreuses</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="height">Taille:</label>
+                <select id="height">
+                    <option value="petite (1m55-1m60)">Petite (1m55-1m60)</option>
+                    <option value="moyenne (1m65-1m70)">Moyenne (1m65-1m70)</option>
+                    <option value="grande (1m75-1m80)">Grande (1m75-1m80)</option>
+                    <option value="très grande (>1m80)">Très grande (>1m80)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="skinType">Type de peau:</label>
+                <select id="skinType">
+                    <option value="peau parfaite">Peau parfaite</option>
+                    <option value="peau légèrement tachetée">Peau légèrement tachetée</option>
+                    <option value="peau avec quelques imperfections">Peau avec quelques imperfections</option>
+                    <option value="peau très claire">Peau très claire</option>
+                    <option value="peau mate">Peau mate</option>
+                    <option value="peau très foncée">Peau très foncée</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Style vestimentaire:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="styleGlamour" value="glamour">
+                        <label for="styleGlamour">Glamour</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="styleChic" value="chic">
+                        <label for="styleChic">Chic</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="styleDécontracté" value="décontracté">
+                        <label for="styleDécontracté">Décontracté</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="styleSportswear" value="sportswear">
+                        <label for="styleSportswear">Sportswear</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="styleBoho" value="boho">
+                        <label for="styleBoho">Boho</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="styleSexy" value="sexy">
+                        <label for="styleSexy">Sexy</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Accessoires:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="accessoireBijoux" value="bijoux">
+                        <label for="accessoireBijoux">Bijoux</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="accessoireLunettes" value="lunettes">
+                        <label for="accessoireLunettes">Lunettes</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="accessoireChapeau" value="chapeau">
+                        <label for="accessoireChapeau">Chapeau</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="accessoireSac" value="sac">
+                        <label for="accessoireSac">Sac</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="makeup">Maquillage:</label>
+                <select id="makeup">
+                    <option value="maquillage naturel">Naturel</option>
+                    <option value="maquillage léger">Léger</option>
+                    <option value="maquillage glamour">Glamour</option>
+                    <option value="maquillage smokey eyes">Smokey eyes</option>
+                    <option value="maquillage audacieux">Audacieux</option>
+                    <option value="maquillage nude">Nude</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="pose">Pose:</label>
+                <select id="pose">
+                    <option value="décontractée">Décontractée</option>
+                    <option value="sensuelle">Sensuelle</option>
+                    <option value="naturelle">Naturelle</option>
+                    <option value="dynamique">Dynamique</option>
+                    <option value="élégante">Élégante</option>
+                    <option value="provocante">Provocante</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Lieu:</label>
+                <select id="location">
+                    <option value="studio professionnel">Studio professionnel</option>
+                    <option value="plage">Plage</option>
+                    <option value="ville">Ville</option>
+                    <option value="nature">Nature</option>
+                    <option value="appartement luxueux">Appartement luxueux</option>
+                    <option value="hôtel de luxe">Hôtel de luxe</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="lighting">Éclairage:</label>
+                <select id="lighting">
+                    <option value="éclairage studio">Éclairage studio</option>
+                    <option value="lumière naturelle">Lumière naturelle</option>
+                    <option value="éclairage dramatique">Éclairage dramatique</option>
+                    <option value="lumières néon">Lumières néon</option>
+                    <option value="éclairage doux">Éclairage doux</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="camera">Type de photo:</label>
+                <select id="camera">
+                    <option value="photo professionnelle 8k">Photo professionnelle 8K</option>
+                    <option value="selfie de haute qualité">Selfie de haute qualité</option>
+                    <option value="photo de mode">Photo de mode</option>
+                    <option value="photo lifestyle">Photo lifestyle</option>
+                    <option value="photo de plage">Photo de plage</option>
+                </select>
+            </div>
+            
+            <button type="button" onclick="generatePrompt()">Générer le Prompt</button>
+        </form>
+        
+        <div id="result" style="display: none;">
+            <h3>Votre Prompt:</h3>
+            <p id="promptOutput"></p>
+            <button class="copy-btn" onclick="copyToClipboard()">Copier le Prompt</button>
         </div>
-        <!-- Tous les autres détails -->
-      </div>
     </div>
-    <div class="prompt-box">
-      <h3>Prompt ID Généré:</h3>
-      <textarea id="ai-prompt" readonly>
-Une femme latino de 25 ans, visage ovale, yeux en amande, sourcils légèrement arqués, nez fin, lèvres pulpeuses, cheveux longs et bouclés, morphologie voluptueuse, poitrine généreuse.
-      </textarea>
-      <div class="prompt-actions">
-        <button class="action-btn copy-btn">Copier</button>
-        <button class="action-btn restart-btn">Recommencer</button>
-        <button class="action-btn back-btn">Retour</button>
-      </div>
-    </div>
-  </div>
-</div>
+    
+    <script>
+        // Vérifier le mode préféré de l'utilisateur
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Basculer entre les modes clair et sombre
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            
+            // Sauvegarder la préférence
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        // Charger la préférence sauvegardée
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        function generatePrompt() {
+            // Récupérer toutes les valeurs du formulaire
+            const firstName = document.getElementById('firstName').value || 'Emma';
+            const lastName = document.getElementById('lastName').value || 'Dubois';
+            const ethnicity = document.getElementById('ethnicity').value;
+            const faceShape = document.getElementById('faceShape').value;
+            const eyes = document.getElementById('eyes').value;
+            const eyeColor = document.getElementById('eyeColor').value;
+            const hairColor = document.getElementById('hairColor').value;
+            const hairLength = document.getElementById('hairLength').value;
+            const hairStyle = document.getElementById('hairStyle').value;
+            const bodyType = document.getElementById('bodyType').value;
+            const breastSize = document.getElementById('breastSize').value;
+            const buttSize = document.getElementById('buttSize').value;
+            const height = document.getElementById('height').value;
+            const skinType = document.getElementById('skinType').value;
+            const makeup = document.getElementById('makeup').value;
+            const pose = document.getElementById('pose').value;
+            const location = document.getElementById('location').value;
+            const lighting = document.getElementById('lighting').value;
+            const camera = document.getElementById('camera').value;
+            
+            // Récupérer les styles vestimentaires cochés
+            let clothingStyles = [];
+            if (document.getElementById('styleGlamour').checked) clothingStyles.push('glamour');
+            if (document.getElementById('styleChic').checked) clothingStyles.push('chic');
+            if (document.getElementById('styleDécontracté').checked) clothingStyles.push('décontracté');
+            if (document.getElementById('styleSportswear').checked) clothingStyles.push('sportswear');
+            if (document.getElementById('styleBoho').checked) clothingStyles.push('boho');
+            if (document.getElementById('styleSexy').checked) clothingStyles.push('sexy');
+            
+            // Récupérer les accessoires cochés
+            let accessories = [];
+            if (document.getElementById('accessoireBijoux').checked) accessories.push('bijoux');
+            if (document.getElementById('accessoireLunettes').checked) accessories.push('lunettes');
+            if (document.getElementById('accessoireChapeau').checked) accessories.push('chapeau');
+            if (document.getElementById('accessoireSac').checked) accessories.push('sac');
+            
+            // Construire le prompt
+            let prompt = `Crée une image ultra-réaliste d'une influenceuse sexy nommée ${firstName} ${lastName}, ${ethnicity} avec un visage ${faceShape} et ${eyes} ${eyeColor}. `;
+            prompt += `Elle a des cheveux ${hairLength} ${hairStyle} ${hairColor} et une silhouette ${bodyType} avec des seins ${breastSize} et des fesses ${buttSize}. `;
+            prompt += `Elle mesure ${height} avec une ${skinType}. `;
+            
+            if (clothingStyles.length > 0) {
+                prompt += `Style vestimentaire: ${clothingStyles.join(', ')}. `;
+            }
+            
+            if (accessories.length > 0) {
+                prompt += `Accessoires: ${accessories.join(', ')}. `;
+            }
+            
+            prompt += `Maquillage: ${makeup}. Pose: ${pose}. `;
+            prompt += `Lieu: ${location}. Éclairage: ${lighting}. `;
+            prompt += `Type de photo: ${camera}. `;
+            prompt += `Hyperréaliste, détails peau parfaite, textures riches, profondeur de champ, éclairage professionnel. `;
+            prompt += `Respecte les proportions anatomiques correctes, ombres et lumières naturelles.`;
+            
+            // Afficher le résultat
+            document.getElementById('promptOutput').textContent = prompt;
+            document.getElementById('result').style.display = 'block';
+        }
+        
+        function copyToClipboard() {
+            const promptText = document.getElementById('promptOutput').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                alert('Prompt copié dans le presse-papier!');
+            }).catch(err => {
+                console.error('Erreur lors de la copie: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
